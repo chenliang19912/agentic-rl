@@ -1,0 +1,20 @@
+# 自研轻量 Agentic RL 训练栈依赖
+# 实测环境：Python 3.12 / CUDA 12.8 / NVIDIA V100 (sm_70)
+# 说明：自研栈正是因为 verl 官方镜像在 V100 sm_70 上无可用 kernel 而起，
+#       故不依赖 verl/OpenRLHF/LLaMA-Factory；下列为基础依赖。
+
+# ---- 训练与推理核心 ----
+torch                # 实测 2.10
+vllm                 # 实测 1.3.0；锁步多轮 rollout
+transformers         # AutoModelForCausalLM / AutoTokenizer
+peft                 # LoRA（get_peft_model / disable_adapter 零显存参考 KL）
+
+# ---- 数据 / 任务构建 ----
+numpy
+pandas               # 读取 MBPP+/HumanEval+ parquet
+pyarrow              # pandas.read_parquet 引擎
+
+# 注：
+# - BM25 检索环境（检索 Agent 项目）为自建 CSR 倒排，无外部检索依赖；
+# - 代码沙盒（代码 Agent 项目）用标准库 unshare/resource/subprocess/ast，无额外依赖；
+# - EvalPlus 数据以 parquet 形式提供（data/mbpp/*.parquet），不 import evalplus 包。

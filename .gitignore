@@ -1,0 +1,29 @@
+# ---- 大体积产物（不开源，按 README 复现命令重建）----
+# checkpoints: 模型权重 / LoRA adapter / merged（185G）
+# index/index_zh: 检索 Agent 项目 BM25 wiki 倒排索引（23G / 6.1G）
+# data: MBPP+/HumanEval+ parquet + 构建的 tasks/hidden jsonl（11G）
+# hf_cache_zh: HuggingFace 缓存（4.3G）
+# logs: 训练/评测 rollout 日志与 summary（86M）
+checkpoints/
+index/
+index_zh/
+data/
+hf_cache_zh/
+logs/
+
+# ---- 崩溃转储（collatz bigint 爆炸遗留，root 属主，见 C4_README 坑记录 9）----
+core.*
+core
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# ---- 编辑器 / 系统 ----
+.DS_Store
+*.swp
+.vscode/
+.idea/
