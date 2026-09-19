@@ -5,8 +5,9 @@
 
 > 自研轻量 Agentic RL 训练栈 · 代码执行环境篇 · 完整复盘
 > 所有数字真实跑出，口径见仓库 `C4_README.md`。代码 + 实验日志已开源（MIT）。
-> 前传（检索环境篇）：《单卡 V100 从零自研多轮 GRPO：把 Qwen3-4B 训成"检索—推理—再检索"Agent》，
+> 前传（检索环境篇）：[《单卡 V100 从零自研多轮 GRPO：把 Qwen3-4B 训成"检索—推理—再检索"Agent》](https://blog.csdn.net/weixin_49528551/article/details/164589252)，
 > 本文开头提到的"检索 Agent 项目"即指它。
+> 代码、实验日志（含 10 条完整坑记录）、复现命令都在仓库：[agentic-rl](https://github.com/chenliang19912/agentic-rl)。欢迎拍砖。
 
 ## 缘起：如果"可验证奖励 Agentic RL"是通用范式，那环境就应该能像插件一样换
 

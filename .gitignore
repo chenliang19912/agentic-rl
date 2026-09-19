@@ -27,3 +27,8 @@ __pycache__/
 *.swp
 .vscode/
 .idea/
+
+# ---- 本地调试脚本（构建期排查用，不入库）----
+c4_lcb_probe.py
+c4_lcb_probe2.py
+c4_lcb_debug.py
