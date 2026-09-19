@@ -4,7 +4,8 @@
 set -e
 GPU=${1:-1}
 IMG=1cat-vllm:v100-1.3.0
-WORK=/mnt/storage/tinghan.cl/claudecode_projects/agentic_rl
+# WORK 换成本机仓库路径（与 c4 各脚本 docstring 的 <user> 占位同义）
+WORK=/mnt/storage/<user>/claudecode_projects/agentic_rl
 COMMON=(-v /mnt/nas3/shared/model:/models:ro -v "$WORK:/work" -w /work -e HF_HUB_OFFLINE=1)
 
 run () {  # run <日志名> <镜像内命令...>
